@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+<Pane xmlns:fx="http://javafx.com/fxml"
+      xmlns="http://javafx.com/javafx"
+      fx:controller="controller.CoordinateController"
+      onMouseClicked="#mouseClick"
+      fx:id="coordinate"
+      prefHeight="768.0" prefWidth="1024.0">
+    <HBox>
+        <Label text="简介："/>
+        <Text text="在坐标系中点击，会将点加入，连续不停点击，会实时计算最近点对，并以直线连接。点击refresh重新开始"/>
+        <Button fx:id="refresh" onAction="#refresh" text="刷新"/>
+    </HBox>
+
+    <Line startX="50" startY="384" endX="974" endY="384"/>
+    <Line startX="512" endX="512" startY="50" endY="718"/>
+</Pane>
