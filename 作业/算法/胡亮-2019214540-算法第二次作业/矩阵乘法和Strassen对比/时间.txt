@@ -1,0 +1,333 @@
+"C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.2.2\jbr\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.2.2\lib\idea_rt.jar=50810:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.2.2\bin" -Dfile.encoding=UTF-8 -classpath C:\Users\hl\Desktop\算法作业\胡亮-2019214540-算法第二次作业\矩阵乘法和Strassen对比\out\production\java Main
+2 x 2矩阵
+普通方法耗时：12.00us
+strassen方法耗时：3.00us
+4 x 4矩阵
+普通方法耗时：12.10us
+strassen方法耗时：41.40us
+8 x 8矩阵
+普通方法耗时：22.50us
+strassen方法耗时：168.90us
+16 x 16矩阵
+普通方法耗时：165.90us
+strassen方法耗时：1.87ms
+32 x 32矩阵
+普通方法耗时：962.00us
+strassen方法耗时：4.66ms
+64 x 64矩阵
+普通方法耗时：2.15ms
+strassen方法耗时：30.26ms
+128 x 128矩阵
+普通方法耗时：1.96ms
+strassen方法耗时：209.30ms
+256 x 256矩阵
+普通方法耗时：29.73ms
+strassen方法耗时：965.68ms
+512 x 512矩阵
+普通方法耗时：236.97ms
+strassen方法耗时：5.80s
+1024 x 1024矩阵
+普通方法耗时：3.00s
+strassen方法耗时：40.49s
+2048 x 2048矩阵
+普通方法耗时：57.66s
+strassen方法耗时：5.05m
+2 x 2矩阵
+普通方法耗时：9.70us
+strassen方法耗时：800.00ns
+4 x 4矩阵
+普通方法耗时：9.70us
+strassen方法耗时：9.70us
+8 x 8矩阵
+普通方法耗时：9.30us
+strassen方法耗时：52.20us
+16 x 16矩阵
+普通方法耗时：9.30us
+strassen方法耗时：351.10us
+32 x 32矩阵
+普通方法耗时：43.90us
+strassen方法耗时：2.46ms
+64 x 64矩阵
+普通方法耗时：227.00us
+strassen方法耗时：16.36ms
+128 x 128矩阵
+普通方法耗时：1.61ms
+strassen方法耗时：112.83ms
+256 x 256矩阵
+普通方法耗时：17.81ms
+strassen方法耗时：836.78ms
+512 x 512矩阵
+普通方法耗时：257.65ms
+strassen方法耗时：6.07s
+1024 x 1024矩阵
+普通方法耗时：3.26s
+strassen方法耗时：42.70s
+2048 x 2048矩阵
+普通方法耗时：59.47s
+strassen方法耗时：4.95m
+2 x 2矩阵
+普通方法耗时：11.70us
+strassen方法耗时：1.60us
+4 x 4矩阵
+普通方法耗时：9.80us
+strassen方法耗时：10.70us
+8 x 8矩阵
+普通方法耗时：9.80us
+strassen方法耗时：55.00us
+16 x 16矩阵
+普通方法耗时：32.20us
+strassen方法耗时：1.26ms
+32 x 32矩阵
+普通方法耗时：134.80us
+strassen方法耗时：6.22ms
+64 x 64矩阵
+普通方法耗时：215.10us
+strassen方法耗时：17.56ms
+128 x 128矩阵
+普通方法耗时：1.62ms
+strassen方法耗时：113.12ms
+256 x 256矩阵
+普通方法耗时：16.71ms
+strassen方法耗时：827.38ms
+512 x 512矩阵
+普通方法耗时：230.66ms
+strassen方法耗时：5.95s
+1024 x 1024矩阵
+普通方法耗时：2.56s
+strassen方法耗时：41.67s
+2048 x 2048矩阵
+普通方法耗时：54.73s
+strassen方法耗时：4.83m
+2 x 2矩阵
+普通方法耗时：8.60us
+strassen方法耗时：600.00ns
+4 x 4矩阵
+普通方法耗时：11.20us
+strassen方法耗时：16.40us
+8 x 8矩阵
+普通方法耗时：11.10us
+strassen方法耗时：75.10us
+16 x 16矩阵
+普通方法耗时：32.00us
+strassen方法耗时：1.24ms
+32 x 32矩阵
+普通方法耗时：124.00us
+strassen方法耗时：6.20ms
+64 x 64矩阵
+普通方法耗时：308.80us
+strassen方法耗时：21.91ms
+128 x 128矩阵
+普通方法耗时：4.63ms
+strassen方法耗时：114.98ms
+256 x 256矩阵
+普通方法耗时：19.58ms
+strassen方法耗时：802.00ms
+512 x 512矩阵
+普通方法耗时：259.88ms
+strassen方法耗时：5.82s
+1024 x 1024矩阵
+普通方法耗时：2.49s
+strassen方法耗时：42.02s
+2048 x 2048矩阵
+普通方法耗时：57.02s
+strassen方法耗时：4.81m
+2 x 2矩阵
+普通方法耗时：9.40us
+strassen方法耗时：700.00ns
+4 x 4矩阵
+普通方法耗时：12.20us
+strassen方法耗时：16.30us
+8 x 8矩阵
+普通方法耗时：19.60us
+strassen方法耗时：177.90us
+16 x 16矩阵
+普通方法耗时：32.20us
+strassen方法耗时：1.26ms
+32 x 32矩阵
+普通方法耗时：122.50us
+strassen方法耗时：8.60ms
+64 x 64矩阵
+普通方法耗时：439.90us
+strassen方法耗时：29.06ms
+128 x 128矩阵
+普通方法耗时：3.57ms
+strassen方法耗时：126.11ms
+256 x 256矩阵
+普通方法耗时：15.96ms
+strassen方法耗时：813.46ms
+512 x 512矩阵
+普通方法耗时：234.11ms
+strassen方法耗时：5.78s
+1024 x 1024矩阵
+普通方法耗时：3.04s
+strassen方法耗时：41.63s
+2048 x 2048矩阵
+普通方法耗时：54.57s
+strassen方法耗时：4.81m
+2 x 2矩阵
+普通方法耗时：8.80us
+strassen方法耗时：600.00ns
+4 x 4矩阵
+普通方法耗时：10.50us
+strassen方法耗时：13.90us
+8 x 8矩阵
+普通方法耗时：24.60us
+strassen方法耗时：210.70us
+16 x 16矩阵
+普通方法耗时：11.10us
+strassen方法耗时：330.10us
+32 x 32矩阵
+普通方法耗时：33.80us
+strassen方法耗时：2.36ms
+64 x 64矩阵
+普通方法耗时：730.70us
+strassen方法耗时：34.43ms
+128 x 128矩阵
+普通方法耗时：1.57ms
+strassen方法耗时：115.47ms
+256 x 256矩阵
+普通方法耗时：18.15ms
+strassen方法耗时：825.19ms
+512 x 512矩阵
+普通方法耗时：244.99ms
+strassen方法耗时：5.85s
+1024 x 1024矩阵
+普通方法耗时：2.56s
+strassen方法耗时：41.55s
+2048 x 2048矩阵
+普通方法耗时：54.26s
+strassen方法耗时：4.82m
+2 x 2矩阵
+普通方法耗时：14.30us
+strassen方法耗时：1.30us
+4 x 4矩阵
+普通方法耗时：16.50us
+strassen方法耗时：26.00us
+8 x 8矩阵
+普通方法耗时：21.20us
+strassen方法耗时：179.50us
+16 x 16矩阵
+普通方法耗时：33.30us
+strassen方法耗时：1.24ms
+32 x 32矩阵
+普通方法耗时：137.00us
+strassen方法耗时：9.05ms
+64 x 64矩阵
+普通方法耗时：227.40us
+strassen方法耗时：16.21ms
+128 x 128矩阵
+普通方法耗时：5.38ms
+strassen方法耗时：129.02ms
+256 x 256矩阵
+普通方法耗时：17.73ms
+strassen方法耗时：804.93ms
+512 x 512矩阵
+普通方法耗时：245.57ms
+strassen方法耗时：6.03s
+1024 x 1024矩阵
+普通方法耗时：2.43s
+strassen方法耗时：41.30s
+2048 x 2048矩阵
+普通方法耗时：54.58s
+strassen方法耗时：4.83m
+2 x 2矩阵
+普通方法耗时：7.80us
+strassen方法耗时：1.20us
+4 x 4矩阵
+普通方法耗时：16.00us
+strassen方法耗时：25.80us
+8 x 8矩阵
+普通方法耗时：9.90us
+strassen方法耗时：49.70us
+16 x 16矩阵
+普通方法耗时：29.60us
+strassen方法耗时：1.12ms
+32 x 32矩阵
+普通方法耗时：37.50us
+strassen方法耗时：2.30ms
+64 x 64矩阵
+普通方法耗时：306.90us
+strassen方法耗时：21.38ms
+128 x 128矩阵
+普通方法耗时：1.63ms
+strassen方法耗时：115.31ms
+256 x 256矩阵
+普通方法耗时：17.84ms
+strassen方法耗时：799.72ms
+512 x 512矩阵
+普通方法耗时：227.22ms
+strassen方法耗时：6.00s
+1024 x 1024矩阵
+普通方法耗时：2.54s
+strassen方法耗时：41.10s
+2048 x 2048矩阵
+普通方法耗时：55.46s
+strassen方法耗时：4.84m
+2 x 2矩阵
+普通方法耗时：9.40us
+strassen方法耗时：1.40us
+4 x 4矩阵
+普通方法耗时：17.20us
+strassen方法耗时：28.00us
+8 x 8矩阵
+普通方法耗时：21.70us
+strassen方法耗时：198.50us
+16 x 16矩阵
+普通方法耗时：36.10us
+strassen方法耗时：1.38ms
+32 x 32矩阵
+普通方法耗时：135.30us
+strassen方法耗时：5.10ms
+64 x 64矩阵
+普通方法耗时：234.30us
+strassen方法耗时：17.34ms
+128 x 128矩阵
+普通方法耗时：1.77ms
+strassen方法耗时：115.16ms
+256 x 256矩阵
+普通方法耗时：18.32ms
+strassen方法耗时：843.36ms
+512 x 512矩阵
+普通方法耗时：252.07ms
+strassen方法耗时：5.73s
+1024 x 1024矩阵
+普通方法耗时：2.42s
+strassen方法耗时：41.16s
+2048 x 2048矩阵
+普通方法耗时：54.38s
+strassen方法耗时：4.83m
+2 x 2矩阵
+普通方法耗时：8.90us
+strassen方法耗时：700.00ns
+4 x 4矩阵
+普通方法耗时：10.90us
+strassen方法耗时：14.60us
+8 x 8矩阵
+普通方法耗时：12.80us
+strassen方法耗时：94.20us
+16 x 16矩阵
+普通方法耗时：27.90us
+strassen方法耗时：1.06ms
+32 x 32矩阵
+普通方法耗时：117.40us
+strassen方法耗时：6.35ms
+64 x 64矩阵
+普通方法耗时：261.10us
+strassen方法耗时：19.82ms
+128 x 128矩阵
+普通方法耗时：1.86ms
+strassen方法耗时：122.20ms
+256 x 256矩阵
+普通方法耗时：18.86ms
+strassen方法耗时：810.86ms
+512 x 512矩阵
+普通方法耗时：227.88ms
+strassen方法耗时：5.82s
+1024 x 1024矩阵
+普通方法耗时：3.00s
+strassen方法耗时：41.03s
+2048 x 2048矩阵
+普通方法耗时：54.93s
+strassen方法耗时：5.40m
+
+Process finished with exit code 0

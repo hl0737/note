@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<TabPane xmlns:fx="http://javafx.com/fxml"
+         xmlns="http://javafx.com/javafx">
+    <tabs>
+        <Tab text="普通模式">
+            <fx:include source="normal.fxml" fx:id="normalModeTab"/>
+        </Tab>
+        <Tab text="坐标轴模式">
+            <fx:include source="coordinate.fxml" fx:id="coordinateModeTab"/>
+        </Tab>
+    </tabs>
+</TabPane>

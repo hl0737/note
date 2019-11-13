@@ -1,0 +1,25 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<GridPane xmlns:fx="http://javafx.com/fxml"
+          fx:controller="controller.NormalController" alignment="center" hgap="10" vgap="10">
+    <Button onAction="#ten" text="10" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+    <Button onAction="#hundred" text="100" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+    <Button onAction="#thousand" text="1000" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+    <Button onAction="#tenThousand" text="1万" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+    <Button onAction="#hundredThousand" text="10万" GridPane.rowIndex="0" GridPane.columnIndex="4"/>
+    <Button onAction="#million" text="100万" GridPane.rowIndex="0" GridPane.columnIndex="5"/>
+
+    <ListView fx:id="listview" GridPane.rowIndex="1" GridPane.columnIndex="0" GridPane.columnSpan="10"
+              GridPane.rowSpan="15"/>
+
+    <HBox GridPane.rowIndex="16" GridPane.columnIndex="0">
+        <Label text="最近点对："/>
+        <Text fx:id="nearestPair"/>
+    </HBox>
+    <HBox GridPane.rowIndex="16" GridPane.columnIndex="4">
+        <Label text="距离："/>
+        <Text fx:id="distance"/>
+    </HBox>
+
+</GridPane>
