@@ -1,0 +1,90 @@
+{
+      "children": [
+      {
+        "children": [
+        {
+          "children": [
+          {
+            "name": "长安区",
+            "parent": "石家庄市"
+        },
+        {
+            "name": "桥东区",
+            "parent": "石家庄市"
+        },
+        {
+            "name": "桥西区",
+            "parent": "石家庄市"
+        }
+        ],
+        "name": "石家庄市",
+        "parent": "河北省"
+    },
+    {
+      "children": [
+      {
+        "name": "路南区",
+        "parent": "唐山市"
+    },
+    {
+        "name": "路北区",
+        "parent": "唐山市"
+    },
+    {
+        "name": "古冶区",
+        "parent": "唐山市"
+    }
+    ],
+    "name": "唐山市",
+    "parent": "河北省"
+}
+],
+"name": "河北省",
+"parent": "中国"
+},
+{
+    "children": [
+    {
+      "children": [
+      {
+        "name": "小店区",
+        "parent": "太原市"
+    },
+    {
+        "name": "迎泽区",
+        "parent": "太原市"
+    },
+    {
+        "name": "杏花岭区",
+        "parent": "太原市"
+    }
+    ],
+    "name": "太原市",
+    "parent": "山西省"
+},
+{
+  "children": [
+  {
+    "name": "城  区",
+    "parent": "大同市"
+},
+{
+    "name": "矿  区",
+    "parent": "大同市"
+},
+{
+    "name": "南郊区",
+    "parent": "大同市"
+}
+],
+"name": "大同市",
+"parent": "山西省"
+}
+],
+"name": "山西省",
+"parent": "中国"
+}
+],
+"name": "中国",
+"parent": "null"
+}

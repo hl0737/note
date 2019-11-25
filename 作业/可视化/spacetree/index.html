@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>SpaceTree</title>
+
+  <style>
+
+   .node {
+    cursor: pointer;
+}
+
+.node circle {
+   fill: #fff;
+   stroke: steelblue;
+   stroke-width: 3px;
+}
+
+.node text {
+   font: 12px sans-serif;
+}
+
+.link {
+   fill: none;
+   stroke: #ccc;
+   stroke-width: 2px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+  <!-- load the d3.js library -->   
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+
+  <script>
+
+    var treeData = {
+      "children": [
+      {
+        "children": [
+        {
+          "children": [
+          {
+            "name": "长安区",
+            "parent": "石家庄市"
+        },
+        {
+            "name": "桥东区",
+            "parent": "石家庄市"
+        },
+        {
+            "name": "桥西区",
+            "parent": "石家庄市"
+        }
+        ],
+        "name": "石家庄市",
+        "parent": "河北省"
+    },
+    {
+      "children": [
+      {
+        "name": "路南区",
+        "parent": "唐山市"
+    },
+    {
+        "name": "路北区",
+        "parent": "唐山市"
+    },
+    {
+        "name": "古冶区",
+        "parent": "唐山市"
+    }
+    ],
+    "name": "唐山市",
+    "parent": "河北省"
+}
+],
+"name": "河北省",
+"parent": "中国"
+},
+{
+    "children": [
+    {
+      "children": [
+      {
+        "name": "小店区",
+        "parent": "太原市"
+    },
+    {
+        "name": "迎泽区",
+        "parent": "太原市"
+    },
+    {
+        "name": "杏花岭区",
+        "parent": "太原市"
+    }
+    ],
+    "name": "太原市",
+    "parent": "山西省"
+},
+{
+  "children": [
+  {
+    "name": "城  区",
+    "parent": "大同市"
+},
+{
+    "name": "矿  区",
+    "parent": "大同市"
+},
+{
+    "name": "南郊区",
+    "parent": "大同市"
+}
+],
+"name": "大同市",
+"parent": "山西省"
+}
+],
+"name": "山西省",
+"parent": "中国"
+}
+],
+"name": "中国",
+"parent": "null"
+}
+
+
+// ************** Generate the tree diagram  *****************
+var margin = {top: 20, right: 120, bottom: 20, left: 120},
+width = 1000 - margin.right - margin.left,
+height = 550 - margin.top - margin.bottom;
+
+var i = 0, duration = 750, root;
+
+var tree = d3.layout.tree().size([height, width]);
+
+var diagonal = d3.svg.diagonal().projection(function(d) { return [d.y, d.x]; });
+
+var svg = d3.select("body").append("svg").attr("width", width + margin.right + margin.left).attr("height", height + margin.top + margin.bottom)
+.append("g")
+.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+root = treeData;
+root.x0 = height / 2;
+root.y0 = 0;
+
+update(root);
+
+function update(source) {
+
+  // Compute the new tree layout.
+  var nodes = tree.nodes(root).reverse(),     links = tree.links(nodes);
+
+  // Normalize for fixed-depth.
+  nodes.forEach(function(d) { d.y = d.depth * 180; });
+
+  // Update the nodes…
+  var node = svg.selectAll("g.node")
+  .data(nodes, function(d) { return d.id || (d.id = ++i); });
+
+  // Enter any new nodes at the parent's previous position.
+  var nodeEnter = node.enter().append("g")
+  .attr("class", "node")
+  .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
+  .on("click", click);
+
+  nodeEnter.append("circle")
+  .attr("r", 1e-6)
+  .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+
+  nodeEnter.append("text")
+  .attr("x", function(d) { return d.children || d._children ? -13 : 13; })
+  .attr("dy", ".35em")
+  .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
+  .text(function(d) { return d.name + "0"; })
+  .style("fill-opacity", 1e-6);
+
+  // Transition nodes to their new position.
+  var nodeUpdate = node.transition()
+  .duration(duration)
+  .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
+
+  nodeUpdate.select("circle")
+  .attr("r", 10)
+  .style("fill", function(d) { return !d.myFocus ? "lightsteelblue" : "#fff"; });
+
+  nodeUpdate.select("text")
+  .style("fill-opacity", 1);
+
+  // Transition exiting nodes to the parent's new position.
+  var nodeExit = node.exit().transition()
+  .duration(duration)
+  .attr("transform", function(d) { return "translate(" + source.y + "," + source.x + ")"; })
+  .remove();
+
+  nodeExit.select("circle")
+  .attr("r", 1e-6);
+
+  nodeExit.select("text")
+  .style("fill-opacity", 1e-6);
+
+  // Update the links…
+  var link = svg.selectAll("path.link")
+  .data(links, function(d) { return d.target.id; });
+
+  // Enter any new links at the parent's previous position.
+  link.enter().insert("path", "g")
+  .attr("class", "link")
+  .attr("d", function(d) {
+    var o = {x: source.x0, y: source.y0};
+    return diagonal({source: o, target: o});
+});
+
+  // Transition links to their new position.
+  link.transition()
+  .duration(duration)
+  .attr("d", diagonal);
+
+  // Transition exiting nodes to the parent's new position.
+  link.exit().transition()
+  .duration(duration)
+  .attr("d", function(d) {
+    var o = {x: source.x, y: source.y};
+    return diagonal({source: o, target: o});
+})
+  .remove();
+
+  // Stash the old positions for transition.
+  nodes.forEach(function(d) {
+   d.x0 = d.x;
+   d.y0 = d.y;
+});
+}
+
+// 初始化
+var nodes=tree.nodes(root).reverse();
+// 把所有结点收缩起来，一开始没有focus的结点
+nodes.forEach(function(d) {
+  if (d.children) {
+     d._children = d.children;
+     d.children = null;
+ }
+});
+// 将所有点的myFocus设置为false
+nodes.forEach(function(d) {
+    d.myFocus = false;
+});
+
+update(root);
+
+// Toggle children on click.
+function click(d) {
+    if (d.myFocus) {
+        // 如果点击的是展开结点，自己的孩子收缩起来（递归），父节点变为focus
+        DFSCollapse(d);
+    } else {
+        // 如果点击的不是展开结点，它的兄弟结点要全部收缩起来（递归），然后它自己的孩子展开一层，自己变为focus
+        var brothers = findBrothers(d);
+        brothers.forEach(function(d) {
+            DFSCollapse(d);
+        });
+        // 自己的孩子展开一层，自己变为focus
+        clickInner(d);
+    }
+    update(d);
+}
+
+function findBrothers(d) {
+    var brothers = new Array();
+    var i = 0;
+    if (d.parent != "null") {
+        d.parent.children.forEach(function(bro) {
+            if (bro != d) {
+                brothers[i++] = bro;
+            }
+        });
+    }
+    return brothers; 
+}
+
+function DFSCollapse(d) {
+    if (!d.myFocus) {
+        return;
+    }
+    if (isLeaf(d)) {
+        if (d.myFocus) {
+            d.myFocus = false;
+        }
+        return;
+    }
+    d.children.forEach(function(d) {
+        DFSCollapse(d);
+    })
+    clickInner(d);
+}
+
+function isLeaf(d) {
+    return d.children == null && d._children == null;
+}
+
+function clickInner(d) {
+     d.myFocus = !d.myFocus;
+     if (d.children) {
+         d._children = d.children;
+         d.children = null;
+     } else {
+         d.children = d._children;
+         d._children = null;
+     }
+}
+
+</script>
+
+</body>
+</html>
