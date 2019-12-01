@@ -1,0 +1,17 @@
+
+
+
+// Instantiate the module
+usb instance_name (
+    .i_usb_ifclk(i_usb_ifclk), 
+    .i_usb_flaga(i_usb_flaga), 
+    .i_usb_flagd(i_usb_flagd), 
+    .io_usb_data(io_usb_data), 
+    .o_usb_addr(o_usb_addr), 
+    .o_usb_slrd(o_usb_slrd), 
+    .o_usb_slwr(o_usb_slwr), 
+    .o_usb_sloe(o_usb_sloe), 
+    .o_usb_pkend(o_usb_pkend)
+    );
+
+

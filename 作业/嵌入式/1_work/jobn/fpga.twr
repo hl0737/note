@@ -1,0 +1,116 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+E:\xilinx\xlinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3
+-s 2 -n 3 -fastpaths -xml fpga.twx fpga.ncd -o fpga.twr fpga.pcf
+
+Design file:              fpga.ncd
+Physical constraint file: fpga.pcf
+Device,package,speed:     xc6slx16,ftg256,C,-2 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock USB_IFCLK
+------------+------------+------------+------------+------------+------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+------------+------------+------------+------------+------------+------------------+--------+
+USB_DATA<0> |    1.470(R)|      SLOW  |   -0.233(R)|      SLOW  |USB_IFCLK_BUFGP   |   0.000|
+USB_DATA<1> |    1.748(R)|      SLOW  |   -0.425(R)|      SLOW  |USB_IFCLK_BUFGP   |   0.000|
+USB_DATA<2> |    1.603(R)|      SLOW  |   -0.357(R)|      SLOW  |USB_IFCLK_BUFGP   |   0.000|
+USB_DATA<3> |    1.804(R)|      SLOW  |   -0.470(R)|      SLOW  |USB_IFCLK_BUFGP   |   0.000|
+USB_DATA<4> |    1.005(R)|      SLOW  |    0.210(R)|      SLOW  |USB_IFCLK_BUFGP   |   0.000|
+USB_DATA<5> |    1.236(R)|      SLOW  |    0.067(R)|      SLOW  |USB_IFCLK_BUFGP   |   0.000|
+USB_DATA<6> |    0.830(R)|      SLOW  |    0.371(R)|      SLOW  |USB_IFCLK_BUFGP   |   0.000|
+USB_DATA<7> |    1.046(R)|      SLOW  |    0.244(R)|      SLOW  |USB_IFCLK_BUFGP   |   0.000|
+USB_DATA<8> |    0.995(R)|      SLOW  |    0.219(R)|      SLOW  |USB_IFCLK_BUFGP   |   0.000|
+USB_DATA<9> |    0.964(R)|      SLOW  |    0.324(R)|      SLOW  |USB_IFCLK_BUFGP   |   0.000|
+USB_DATA<10>|    0.671(R)|      SLOW  |    0.530(R)|      SLOW  |USB_IFCLK_BUFGP   |   0.000|
+USB_DATA<11>|    0.887(R)|      SLOW  |    0.403(R)|      SLOW  |USB_IFCLK_BUFGP   |   0.000|
+USB_DATA<12>|    0.794(R)|      SLOW  |    0.417(R)|      SLOW  |USB_IFCLK_BUFGP   |   0.000|
+USB_DATA<13>|    1.019(R)|      SLOW  |    0.281(R)|      SLOW  |USB_IFCLK_BUFGP   |   0.000|
+USB_DATA<14>|    0.875(R)|      SLOW  |    0.337(R)|      SLOW  |USB_IFCLK_BUFGP   |   0.000|
+USB_DATA<15>|    1.101(R)|      SLOW  |    0.199(R)|      SLOW  |USB_IFCLK_BUFGP   |   0.000|
+USB_FLAGA   |    2.633(R)|      SLOW  |   -0.512(R)|      SLOW  |USB_IFCLK_BUFGP   |   0.000|
+USB_FLAGD   |    3.744(R)|      SLOW  |   -0.813(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
+------------+------------+------------+------------+------------+------------------+--------+
+
+Clock USB_IFCLK to Pad
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+USB_ADDR<1> |         8.708(R)|      SLOW  |         3.552(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
+USB_DATA<0> |        10.582(R)|      SLOW  |         4.247(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
+USB_DATA<1> |        10.622(R)|      SLOW  |         4.251(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
+USB_DATA<2> |        11.445(R)|      SLOW  |         4.410(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
+USB_DATA<3> |        10.632(R)|      SLOW  |         4.297(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
+USB_DATA<4> |        10.472(R)|      SLOW  |         3.945(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
+USB_DATA<5> |        10.266(R)|      SLOW  |         3.945(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
+USB_DATA<6> |         9.980(R)|      SLOW  |         3.760(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
+USB_DATA<7> |         9.980(R)|      SLOW  |         3.760(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
+USB_DATA<8> |        10.049(R)|      SLOW  |         3.692(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
+USB_DATA<9> |        10.235(R)|      SLOW  |         3.999(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
+USB_DATA<10>|        10.056(R)|      SLOW  |         3.898(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
+USB_DATA<11>|        10.053(R)|      SLOW  |         3.842(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
+USB_DATA<12>|        10.076(R)|      SLOW  |         3.923(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
+USB_DATA<13>|        10.239(R)|      SLOW  |         3.990(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
+USB_DATA<14>|        10.025(R)|      SLOW  |         3.852(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
+USB_DATA<15>|        10.391(R)|      SLOW  |         3.876(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
+USB_PKEND   |         8.651(R)|      SLOW  |         3.497(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
+USB_SLOE    |         9.268(R)|      SLOW  |         3.924(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
+USB_SLRD    |         8.561(R)|      SLOW  |         3.435(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
+USB_SLWR    |         8.752(R)|      SLOW  |         3.602(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock to Setup on destination clock USB_IFCLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+USB_IFCLK      |    3.794|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+USB_FLAGA      |LED<0>         |    7.482|
+USB_FLAGB      |LED<1>         |    7.221|
+USB_FLAGC      |LED<2>         |    7.221|
+USB_FLAGD      |LED<3>         |    7.178|
+---------------+---------------+---------+
+
+
+Analysis completed Thu Nov 28 19:04:53 2019 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 4576 MB
+
+
+

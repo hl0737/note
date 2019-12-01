@@ -1,0 +1,78 @@
+{
+  "name": "china",
+  "children": [
+    {
+      "name": "东南",
+      "color": "#FF0000",
+      "children": [
+        {"name": "江苏", "weight": 10.12, "code": "JS"},
+        {"name": "浙江", "weight": 6.14, "code": "ZJ"},
+        {"name": "福建", "weight": 3.91, "code": "FJ"},
+        {"name": "上海", "weight": 3.57, "code": "SH"}
+      ]
+    },
+    {
+      "name": "东北",
+      "color": "#FF7F00",
+      "children": [
+        {"name": "辽宁", "weight": 2.77, "code": "LN"},
+        {"name": "黑龙江", "weight": 1.79, "code": "HLJ"},
+        {"name": "吉林", "weight": 1.65, "code": "JL"}
+      ]
+    },
+    {
+      "name": "华北",
+      "color": "#000000",
+      "children": [
+        {"name": "山东", "weight": 8.36, "code": "SD"},
+        {"name": "河南", "weight": 5.25, "code": "HN"},
+        {"name": "河北", "weight": 3.94, "code": "HB"},
+        {"name": "北京", "weight": 3.31, "code": "BJ"},
+        {"name": "天津", "weight": 2.06, "code": "TJ"},
+        {"name": "内蒙古", "weight": 1.89, "code": "NMG"},
+        {"name": "山西", "weight": 1.84, "code": "SX"}
+      ]
+    },
+    {
+      "name": "华南",
+      "color": "#00FF00",
+      "children": [
+        {"name": "广东", "weight": 10.63, "code": "GD"},
+        {"name": "广西", "weight": 2.23, "code": "GX"},
+        {"name": "海南", "weight": 0.53, "code": "HN"}
+      ]
+    },
+    {
+      "name": "华中",
+      "color": "#00FFFF",
+      "children": [
+        {"name": "湖北", "weight": 4.30, "code": "HB"},
+        {"name": "湖南", "weight": 3.98, "code": "HN"},
+        {"name": "安徽", "weight": 3.28, "code": "AH"},
+        {"name": "陕西", "weight": 2.67, "code": "SX"},
+        {"name": "江西", "weight": 2.40, "code": "JX"}
+      ]
+    },
+    {
+      "name": "西北",
+      "color": "#0000FF",
+      "children": [
+        {"name": "新疆", "weight": 1.33, "code": "XJ"},
+        {"name": "甘肃", "weight": 0.90, "code": "GS"},
+        {"name": "宁夏", "weight": 0.41, "code": "NX"},
+        {"name": "青海", "weight": 0.31, "code": "QH"},
+        {"name": "西藏", "weight": 0.16, "code": "XZ"}
+      ]
+    },
+    {
+      "name": "西南",
+      "color": "#8B00FF",
+      "children": [
+        {"name": "四川", "weight": 4.45, "code": "SC"},
+        {"name": "重庆", "weight": 2.23, "code": "CQ"},
+        {"name": "云南", "weight": 1.95, "code": "YN"},
+        {"name": "贵州", "weight": 1.62, "code": "GZ"}
+      ]
+    }
+  ]
+}

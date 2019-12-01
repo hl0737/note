@@ -1,0 +1,15 @@
+[Inputs]
+i_usb_ifclk
+i_usb_flaga
+i_usb_flagd
+[Outputs]
+o_usb_slrd
+o_usb_slwr
+o_usb_sloe
+o_usb_pkend
+=o_usb_addr[1:0]=
+[BiDir]
+=io_usb_data[15:0]=
+[ATTRIBUTES]
+VeriModel usb
+

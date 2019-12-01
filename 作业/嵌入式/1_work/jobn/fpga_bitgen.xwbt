@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=E:\xilinx\project\jobn\fpga.ncd
+OUTFILE=E:\xilinx\project\jobn\fpga.bit
+FAMILY=Spartan6
+PART=xc6slx16-2ftg256
+WORKINGDIR=E:\xilinx\project\jobn
+LICENSE=WebPack
+USER_INFO=__0_0_0

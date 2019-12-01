@@ -1,0 +1,508 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.07 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.07 secs
+ 
+--> Reading design: fpga.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "fpga.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "fpga"
+Output Format                      : NGC
+Target Device                      : xc6slx16-2-ftg256
+
+---- Source Options
+Top Module Name                    : fpga
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "E:\xilinx\project\jobn\usb.v" into library work
+Parsing verilog file "register.v" included at line 21.
+Parsing module <usb>.
+Analyzing Verilog file "E:\xilinx\project\jobn\fpga.v" into library work
+Parsing verilog file "register.v" included at line 21.
+Parsing module <fpga>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <fpga>.
+
+Elaborating module <usb(DATA_WIDTH=16)>.
+WARNING:HDLCompiler:413 - "E:\xilinx\project\jobn\usb.v" Line 61: Result of 32-bit expression is truncated to fit in 16-bit target.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <fpga>.
+    Related source file is "E:\xilinx\project\jobn\fpga.v".
+    Summary:
+	no macro.
+Unit <fpga> synthesized.
+
+Synthesizing Unit <usb>.
+    Related source file is "E:\xilinx\project\jobn\usb.v".
+        DATA_WIDTH = 16
+    Found 256x16-bit single-port RAM <Mram_buff> for signal <buff>.
+    Found 1-bit register for signal <usb_slwr>.
+    Found 1-bit register for signal <usb_sloe>.
+    Found 1-bit register for signal <usb_pkend>.
+    Found 2-bit register for signal <usb_addr>.
+    Found 8-bit register for signal <counter>.
+    Found 8-bit register for signal <number>.
+    Found 16-bit register for signal <usb_data>.
+    Found 3-bit register for signal <state>.
+    Found 1-bit register for signal <usb_slrd>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 9                                              |
+    | Inputs             | 4                                              |
+    | Outputs            | 6                                              |
+    | Clock              | i_usb_ifclk (rising_edge)                      |
+    | Power Up State     | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 8-bit adder for signal <counter[7]_GND_2_o_add_20_OUT> created at line 180.
+    Found 1-bit tristate buffer for signal <io_usb_data<15>> created at line 61
+    Found 1-bit tristate buffer for signal <io_usb_data<14>> created at line 61
+    Found 1-bit tristate buffer for signal <io_usb_data<13>> created at line 61
+    Found 1-bit tristate buffer for signal <io_usb_data<12>> created at line 61
+    Found 1-bit tristate buffer for signal <io_usb_data<11>> created at line 61
+    Found 1-bit tristate buffer for signal <io_usb_data<10>> created at line 61
+    Found 1-bit tristate buffer for signal <io_usb_data<9>> created at line 61
+    Found 1-bit tristate buffer for signal <io_usb_data<8>> created at line 61
+    Found 1-bit tristate buffer for signal <io_usb_data<7>> created at line 61
+    Found 1-bit tristate buffer for signal <io_usb_data<6>> created at line 61
+    Found 1-bit tristate buffer for signal <io_usb_data<5>> created at line 61
+    Found 1-bit tristate buffer for signal <io_usb_data<4>> created at line 61
+    Found 1-bit tristate buffer for signal <io_usb_data<3>> created at line 61
+    Found 1-bit tristate buffer for signal <io_usb_data<2>> created at line 61
+    Found 1-bit tristate buffer for signal <io_usb_data<1>> created at line 61
+    Found 1-bit tristate buffer for signal <io_usb_data<0>> created at line 61
+    Found 8-bit comparator equal for signal <counter[7]_number[7]_equal_20_o> created at line 172
+    Summary:
+	inferred   1 RAM(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred  38 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred  13 Multiplexer(s).
+	inferred  16 Tristate(s).
+	inferred   1 Finite State Machine(s).
+Unit <usb> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 256x16-bit single-port RAM                            : 1
+# Adders/Subtractors                                   : 1
+ 8-bit adder                                           : 1
+# Registers                                            : 8
+ 1-bit register                                        : 4
+ 16-bit register                                       : 1
+ 2-bit register                                        : 1
+ 8-bit register                                        : 2
+# Comparators                                          : 1
+ 8-bit comparator equal                                : 1
+# Multiplexers                                         : 13
+ 1-bit 2-to-1 multiplexer                              : 5
+ 8-bit 2-to-1 multiplexer                              : 8
+# Tristates                                            : 16
+ 1-bit tristate buffer                                 : 16
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1293 - FF/Latch <usb_addr_0> has a constant value of 0 in block <u_usb>. This FF/Latch will be trimmed during the optimization process.
+
+Synthesizing (advanced) Unit <usb>.
+INFO:Xst:3226 - The RAM <Mram_buff> will be implemented as a BLOCK RAM, absorbing the following register(s): <usb_data>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 16-bit                   |          |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <i_usb_ifclk>   | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <counter>       |          |
+    |     diA            | connected to signal <io_usb_data>   |          |
+    |     doA            | connected to signal <usb_data>      |          |
+    |     dorstA         | connected to internal node          | low      |
+    | reset value        | 0000000000000000                               |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <usb> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 256x16-bit single-port block RAM                      : 1
+# Adders/Subtractors                                   : 1
+ 8-bit adder                                           : 1
+# Registers                                            : 22
+ Flip-Flops                                            : 22
+# Comparators                                          : 1
+ 8-bit comparator equal                                : 1
+# Multiplexers                                         : 13
+ 1-bit 2-to-1 multiplexer                              : 5
+ 8-bit 2-to-1 multiplexer                              : 8
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1293 - FF/Latch <usb_addr_0> has a constant value of 0 in block <usb>. This FF/Latch will be trimmed during the optimization process.
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <u_usb/FSM_0> on signal <state[1:3]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 001   | 001
+ 010   | 010
+ 011   | 011
+ 100   | 100
+-------------------
+
+Optimizing unit <fpga> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block fpga, actual ratio is 0.
+FlipFlop u_usb/state_FSM_FFd1 has been replicated 2 time(s)
+FlipFlop u_usb/state_FSM_FFd2 has been replicated 3 time(s)
+FlipFlop u_usb/state_FSM_FFd3 has been replicated 2 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 31
+ Flip-Flops                                            : 31
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : fpga.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 44
+#      GND                         : 1
+#      INV                         : 1
+#      LUT2                        : 4
+#      LUT3                        : 13
+#      LUT4                        : 6
+#      LUT5                        : 2
+#      LUT6                        : 15
+#      MUXF7                       : 1
+#      VCC                         : 1
+# FlipFlops/Latches                : 31
+#      FD                          : 23
+#      FDE                         : 8
+# RAMS                             : 1
+#      RAMB8BWER                   : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 30
+#      IBUF                        : 4
+#      IOBUF                       : 16
+#      OBUF                        : 10
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16ftg256-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              31  out of  18224     0%  
+ Number of Slice LUTs:                   41  out of   9112     0%  
+    Number used as Logic:                41  out of   9112     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     45
+   Number with an unused Flip Flop:      14  out of     45    31%  
+   Number with an unused LUT:             4  out of     45     8%  
+   Number of fully used LUT-FF pairs:    27  out of     45    60%  
+   Number of unique control sets:         2
+
+IO Utilization: 
+ Number of IOs:                          31
+ Number of bonded IOBs:                  31  out of    186    16%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                1  out of     32     3%  
+    Number using Block RAM only:          1
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+USB_IFCLK                          | BUFGP                  | 32    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 3.179ns (Maximum Frequency: 314.564MHz)
+   Minimum input arrival time before clock: 4.132ns
+   Maximum output required time after clock: 5.598ns
+   Maximum combinational path delay: 5.278ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'USB_IFCLK'
+  Clock period: 3.179ns (frequency: 314.564MHz)
+  Total number of paths / destination ports: 268 / 50
+-------------------------------------------------------------------------
+Delay:               3.179ns (Levels of Logic = 2)
+  Source:            u_usb/counter_4 (FF)
+  Destination:       u_usb/state_FSM_FFd3 (FF)
+  Source Clock:      USB_IFCLK rising
+  Destination Clock: USB_IFCLK rising
+
+  Data Path: u_usb/counter_4 to u_usb/state_FSM_FFd3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               6   0.525   1.306  u_usb/counter_4 (u_usb/counter_4)
+     LUT6:I1->O            3   0.254   0.766  u_usb/state_FSM_FFd3-In2 (u_usb/Madd_counter[7]_GND_2_o_add_20_OUT_cy<5>)
+     LUT6:I5->O            1   0.254   0.000  u_usb/Mmux_state[2]_GND_2_o_wide_mux_27_OUT71 (u_usb/state[2]_GND_2_o_wide_mux_27_OUT<6>)
+     FD:D                      0.074          u_usb/counter_6
+    ----------------------------------------
+    Total                      3.179ns (1.107ns logic, 2.072ns route)
+                                       (34.8% logic, 65.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'USB_IFCLK'
+  Total number of paths / destination ports: 37 / 33
+-------------------------------------------------------------------------
+Offset:              4.132ns (Levels of Logic = 3)
+  Source:            USB_FLAGD (PAD)
+  Destination:       u_usb/state_FSM_FFd1 (FF)
+  Destination Clock: USB_IFCLK rising
+
+  Data Path: USB_FLAGD to u_usb/state_FSM_FFd1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             6   1.328   1.331  USB_FLAGD_IBUF (LED_3_OBUF)
+     LUT6:I0->O            1   0.254   0.910  u_usb/counter[7]_number[7]_equal_20_o83_SW1 (N43)
+     LUT6:I3->O            3   0.235   0.000  u_usb/state_FSM_FFd1-In1 (u_usb/state_FSM_FFd1-In)
+     FD:D                      0.074          u_usb/state_FSM_FFd1
+    ----------------------------------------
+    Total                      4.132ns (1.891ns logic, 2.241ns route)
+                                       (45.8% logic, 54.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'USB_IFCLK'
+  Total number of paths / destination ports: 37 / 21
+-------------------------------------------------------------------------
+Offset:              5.598ns (Levels of Logic = 2)
+  Source:            u_usb/usb_sloe (FF)
+  Destination:       USB_DATA<15> (PAD)
+  Source Clock:      USB_IFCLK rising
+
+  Data Path: u_usb/usb_sloe to USB_DATA<15>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.525   0.725  u_usb/usb_sloe (u_usb/usb_sloe)
+     INV:I->O             16   0.255   1.181  u_usb/usb_sloe_inv1_INV_0 (u_usb/usb_sloe_inv)
+     IOBUF:T->IO               2.912          USB_DATA_15_IOBUF (USB_DATA<15>)
+    ----------------------------------------
+    Total                      5.598ns (3.692ns logic, 1.906ns route)
+                                       (66.0% logic, 34.0% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Delay:               5.278ns (Levels of Logic = 2)
+  Source:            USB_FLAGA (PAD)
+  Destination:       LED<0> (PAD)
+
+  Data Path: USB_FLAGA to LED<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            11   1.328   1.038  USB_FLAGA_IBUF (LED_0_OBUF)
+     OBUF:I->O                 2.912          LED_0_OBUF (LED<0>)
+    ----------------------------------------
+    Total                      5.278ns (4.240ns logic, 1.038ns route)
+                                       (80.3% logic, 19.7% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock USB_IFCLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+USB_IFCLK      |    3.179|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 3.88 secs
+ 
+--> 
+
+Total memory usage is 4495208 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

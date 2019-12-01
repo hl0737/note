@@ -1,0 +1,3 @@
+vhdtdtfi -lib work E:/xilinx/project/jobn/usb.v -lang verilog -prj jobn -o usb.spl -module usb -template E:/xilinx/xlinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 usb.spl E:/xilinx/project/jobn/usb.sym 
+vhdtdtfi -lang verilog -prj jobn -o E:/xilinx/project/jobn/usb.tfi -lib work E:/xilinx/project/jobn//usb.v -module usb -template E:/xilinx/xlinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 
