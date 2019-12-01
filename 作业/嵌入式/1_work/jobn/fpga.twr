@@ -3,7 +3,7 @@ Release 14.7 Trace  (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 E:\xilinx\xlinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3
--s 2 -n 3 -fastpaths -xml fpga.twx fpga.ncd -o fpga.twr fpga.pcf
+-s 2 -n 3 -fastpaths -xml fpga.twx fpga.ncd -o fpga.twr fpga.pcf -ucf fpga.ucf
 
 Design file:              fpga.ncd
 Physical constraint file: fpga.pcf
@@ -15,7 +15,6 @@ Environment Variable      Effect
 NONE                      No environment variables were set
 --------------------------------------------------------------------------------
 
-INFO:Timing:2698 - No timing constraints found, doing default enumeration.
 INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
 INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
    option. All paths that are not constrained will be reported in the 
@@ -25,92 +24,533 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
    and for more information on accounting for different loading conditions, 
    please see the device datasheet.
 
+================================================================================
+Timing constraint: TS_CLOCK_USB = PERIOD TIMEGRP "USB_IFCLK" 48 MHz HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 66720 paths analyzed, 9104 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  11.113ns.
+--------------------------------------------------------------------------------
+
+Paths for end point u_usb/usb_data_12 (SLICE_X11Y19.A5), 221 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     9.720ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               u_usb/counter_2 (FF)
+  Destination:          u_usb/usb_data_12 (FF)
+  Requirement:          20.833ns
+  Data Path Delay:      11.072ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.006ns (0.433 - 0.439)
+  Source Clock:         USB_IFCLK_BUFGP rising at 0.000ns
+  Destination Clock:    USB_IFCLK_BUFGP rising at 20.833ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: u_usb/counter_2 to u_usb/usb_data_12
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X18Y27.BQ      Tcko                  0.525   u_usb/counter<2>
+                                                       u_usb/counter_2
+    SLICE_X28Y61.CX      net (fanout=1463)     4.347   u_usb/counter<2>
+    SLICE_X28Y61.BMUX    Tcxb                  0.220   u_usb/mux3_10_f85
+                                                       u_usb/mux3_12_f7_6
+                                                       u_usb/mux3_10_f8_4
+    SLICE_X4Y50.D2       net (fanout=1)        2.495   u_usb/mux3_10_f85
+    SLICE_X4Y50.CMUX     Topdc                 0.402   u_usb/buff_12170
+                                                       u_usb/mux3_6
+                                                       u_usb/mux3_4_f7
+    SLICE_X11Y19.A5      net (fanout=1)        2.710   u_usb/mux3_4_f7
+    SLICE_X11Y19.CLK     Tas                   0.373   u_usb/usb_data<15>
+                                                       u_usb/Mmux_state[2]_GND_2_o_wide_mux_291_OUT41
+                                                       u_usb/usb_data_12
+    -------------------------------------------------  ---------------------------
+    Total                                     11.072ns (1.520ns logic, 9.552ns route)
+                                                       (13.7% logic, 86.3% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     9.790ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               u_usb/counter_3 (FF)
+  Destination:          u_usb/usb_data_12 (FF)
+  Requirement:          20.833ns
+  Data Path Delay:      11.005ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.003ns (0.433 - 0.436)
+  Source Clock:         USB_IFCLK_BUFGP rising at 0.000ns
+  Destination Clock:    USB_IFCLK_BUFGP rising at 20.833ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: u_usb/counter_3 to u_usb/usb_data_12
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X18Y26.AQ      Tcko                  0.525   u_usb/counter<3>
+                                                       u_usb/counter_3
+    SLICE_X28Y61.BX      net (fanout=1208)     4.339   u_usb/counter<3>
+    SLICE_X28Y61.BMUX    Tbxb                  0.161   u_usb/mux3_10_f85
+                                                       u_usb/mux3_10_f8_4
+    SLICE_X4Y50.D2       net (fanout=1)        2.495   u_usb/mux3_10_f85
+    SLICE_X4Y50.CMUX     Topdc                 0.402   u_usb/buff_12170
+                                                       u_usb/mux3_6
+                                                       u_usb/mux3_4_f7
+    SLICE_X11Y19.A5      net (fanout=1)        2.710   u_usb/mux3_4_f7
+    SLICE_X11Y19.CLK     Tas                   0.373   u_usb/usb_data<15>
+                                                       u_usb/Mmux_state[2]_GND_2_o_wide_mux_291_OUT41
+                                                       u_usb/usb_data_12
+    -------------------------------------------------  ---------------------------
+    Total                                     11.005ns (1.461ns logic, 9.544ns route)
+                                                       (13.3% logic, 86.7% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     9.911ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               u_usb/counter_2 (FF)
+  Destination:          u_usb/usb_data_12 (FF)
+  Requirement:          20.833ns
+  Data Path Delay:      10.881ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.006ns (0.433 - 0.439)
+  Source Clock:         USB_IFCLK_BUFGP rising at 0.000ns
+  Destination Clock:    USB_IFCLK_BUFGP rising at 20.833ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: u_usb/counter_2 to u_usb/usb_data_12
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X18Y27.BQ      Tcko                  0.525   u_usb/counter<2>
+                                                       u_usb/counter_2
+    SLICE_X28Y61.AX      net (fanout=1463)     4.162   u_usb/counter<2>
+    SLICE_X28Y61.BMUX    Taxb                  0.214   u_usb/mux3_10_f85
+                                                       u_usb/mux3_11_f7_8
+                                                       u_usb/mux3_10_f8_4
+    SLICE_X4Y50.D2       net (fanout=1)        2.495   u_usb/mux3_10_f85
+    SLICE_X4Y50.CMUX     Topdc                 0.402   u_usb/buff_12170
+                                                       u_usb/mux3_6
+                                                       u_usb/mux3_4_f7
+    SLICE_X11Y19.A5      net (fanout=1)        2.710   u_usb/mux3_4_f7
+    SLICE_X11Y19.CLK     Tas                   0.373   u_usb/usb_data<15>
+                                                       u_usb/Mmux_state[2]_GND_2_o_wide_mux_291_OUT41
+                                                       u_usb/usb_data_12
+    -------------------------------------------------  ---------------------------
+    Total                                     10.881ns (1.514ns logic, 9.367ns route)
+                                                       (13.9% logic, 86.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point u_usb/usb_data_2 (SLICE_X22Y12.C4), 221 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     9.760ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               u_usb/counter_0 (FF)
+  Destination:          u_usb/usb_data_2 (FF)
+  Requirement:          20.833ns
+  Data Path Delay:      11.012ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.026ns (0.428 - 0.454)
+  Source Clock:         USB_IFCLK_BUFGP rising at 0.000ns
+  Destination Clock:    USB_IFCLK_BUFGP rising at 20.833ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: u_usb/counter_0 to u_usb/usb_data_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X25Y20.DQ      Tcko                  0.430   u_usb/counter<0>
+                                                       u_usb/counter_0
+    SLICE_X34Y58.C3      net (fanout=1042)     4.576   u_usb/counter<0>
+    SLICE_X34Y58.BMUX    Topcb                 0.455   u_usb/mux8_11_f82
+                                                       u_usb/mux8_1411
+                                                       u_usb/mux8_13_f7_1
+                                                       u_usb/mux8_11_f8_1
+    SLICE_X20Y48.D4      net (fanout=1)        1.870   u_usb/mux8_11_f82
+    SLICE_X20Y48.CMUX    Topdc                 0.402   u_usb/buff_6191
+                                                       u_usb/mux8_6
+                                                       u_usb/mux8_4_f7
+    SLICE_X22Y12.C4      net (fanout=1)        2.940   u_usb/mux8_4_f7
+    SLICE_X22Y12.CLK     Tas                   0.339   u_usb/usb_data<3>
+                                                       u_usb/Mmux_state[2]_GND_2_o_wide_mux_291_OUT91
+                                                       u_usb/usb_data_2
+    -------------------------------------------------  ---------------------------
+    Total                                     11.012ns (1.626ns logic, 9.386ns route)
+                                                       (14.8% logic, 85.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     9.789ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               u_usb/counter_1 (FF)
+  Destination:          u_usb/usb_data_2 (FF)
+  Requirement:          20.833ns
+  Data Path Delay:      10.983ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.026ns (0.428 - 0.454)
+  Source Clock:         USB_IFCLK_BUFGP rising at 0.000ns
+  Destination Clock:    USB_IFCLK_BUFGP rising at 20.833ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: u_usb/counter_1 to u_usb/usb_data_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X25Y20.AQ      Tcko                  0.430   u_usb/counter<0>
+                                                       u_usb/counter_1
+    SLICE_X34Y58.D2      net (fanout=1166)     4.521   u_usb/counter<1>
+    SLICE_X34Y58.BMUX    Topdb                 0.481   u_usb/mux8_11_f82
+                                                       u_usb/mux8_152
+                                                       u_usb/mux8_13_f7_1
+                                                       u_usb/mux8_11_f8_1
+    SLICE_X20Y48.D4      net (fanout=1)        1.870   u_usb/mux8_11_f82
+    SLICE_X20Y48.CMUX    Topdc                 0.402   u_usb/buff_6191
+                                                       u_usb/mux8_6
+                                                       u_usb/mux8_4_f7
+    SLICE_X22Y12.C4      net (fanout=1)        2.940   u_usb/mux8_4_f7
+    SLICE_X22Y12.CLK     Tas                   0.339   u_usb/usb_data<3>
+                                                       u_usb/Mmux_state[2]_GND_2_o_wide_mux_291_OUT91
+                                                       u_usb/usb_data_2
+    -------------------------------------------------  ---------------------------
+    Total                                     10.983ns (1.652ns logic, 9.331ns route)
+                                                       (15.0% logic, 85.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     9.803ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               u_usb/counter_0 (FF)
+  Destination:          u_usb/usb_data_2 (FF)
+  Requirement:          20.833ns
+  Data Path Delay:      10.969ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.026ns (0.428 - 0.454)
+  Source Clock:         USB_IFCLK_BUFGP rising at 0.000ns
+  Destination Clock:    USB_IFCLK_BUFGP rising at 20.833ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: u_usb/counter_0 to u_usb/usb_data_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X25Y20.DQ      Tcko                  0.430   u_usb/counter<0>
+                                                       u_usb/counter_0
+    SLICE_X34Y58.D4      net (fanout=1042)     4.507   u_usb/counter<0>
+    SLICE_X34Y58.BMUX    Topdb                 0.481   u_usb/mux8_11_f82
+                                                       u_usb/mux8_152
+                                                       u_usb/mux8_13_f7_1
+                                                       u_usb/mux8_11_f8_1
+    SLICE_X20Y48.D4      net (fanout=1)        1.870   u_usb/mux8_11_f82
+    SLICE_X20Y48.CMUX    Topdc                 0.402   u_usb/buff_6191
+                                                       u_usb/mux8_6
+                                                       u_usb/mux8_4_f7
+    SLICE_X22Y12.C4      net (fanout=1)        2.940   u_usb/mux8_4_f7
+    SLICE_X22Y12.CLK     Tas                   0.339   u_usb/usb_data<3>
+                                                       u_usb/Mmux_state[2]_GND_2_o_wide_mux_291_OUT91
+                                                       u_usb/usb_data_2
+    -------------------------------------------------  ---------------------------
+    Total                                     10.969ns (1.652ns logic, 9.317ns route)
+                                                       (15.1% logic, 84.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point u_usb/usb_data_9 (SLICE_X7Y12.B5), 221 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     9.792ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               u_usb/counter_1 (FF)
+  Destination:          u_usb/usb_data_9 (FF)
+  Requirement:          20.833ns
+  Data Path Delay:      11.005ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.001ns (0.453 - 0.454)
+  Source Clock:         USB_IFCLK_BUFGP rising at 0.000ns
+  Destination Clock:    USB_IFCLK_BUFGP rising at 20.833ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: u_usb/counter_1 to u_usb/usb_data_9
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X25Y20.AQ      Tcko                  0.430   u_usb/counter<0>
+                                                       u_usb/counter_1
+    SLICE_X14Y61.D1      net (fanout=1166)     4.966   u_usb/counter<1>
+    SLICE_X14Y61.BMUX    Topdb                 0.481   u_usb/mux15_10_f85
+                                                       u_usb/mux15_149
+                                                       u_usb/mux15_12_f7_6
+                                                       u_usb/mux15_10_f8_4
+    SLICE_X6Y45.D3       net (fanout=1)        1.882   u_usb/mux15_10_f85
+    SLICE_X6Y45.CMUX     Topdc                 0.456   u_usb/buff_9175
+                                                       u_usb/mux15_6
+                                                       u_usb/mux15_4_f7
+    SLICE_X7Y12.B5       net (fanout=1)        2.417   u_usb/mux15_4_f7
+    SLICE_X7Y12.CLK      Tas                   0.373   u_usb/usb_data<11>
+                                                       u_usb/Mmux_state[2]_GND_2_o_wide_mux_291_OUT161
+                                                       u_usb/usb_data_9
+    -------------------------------------------------  ---------------------------
+    Total                                     11.005ns (1.740ns logic, 9.265ns route)
+                                                       (15.8% logic, 84.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     10.098ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               u_usb/counter_1 (FF)
+  Destination:          u_usb/usb_data_9 (FF)
+  Requirement:          20.833ns
+  Data Path Delay:      10.699ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.001ns (0.453 - 0.454)
+  Source Clock:         USB_IFCLK_BUFGP rising at 0.000ns
+  Destination Clock:    USB_IFCLK_BUFGP rising at 20.833ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: u_usb/counter_1 to u_usb/usb_data_9
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X25Y20.AQ      Tcko                  0.430   u_usb/counter<0>
+                                                       u_usb/counter_1
+    SLICE_X14Y61.B1      net (fanout=1166)     4.697   u_usb/counter<1>
+    SLICE_X14Y61.BMUX    Topbb                 0.444   u_usb/mux15_10_f85
+                                                       u_usb/mux15_1316
+                                                       u_usb/mux15_11_f7_8
+                                                       u_usb/mux15_10_f8_4
+    SLICE_X6Y45.D3       net (fanout=1)        1.882   u_usb/mux15_10_f85
+    SLICE_X6Y45.CMUX     Topdc                 0.456   u_usb/buff_9175
+                                                       u_usb/mux15_6
+                                                       u_usb/mux15_4_f7
+    SLICE_X7Y12.B5       net (fanout=1)        2.417   u_usb/mux15_4_f7
+    SLICE_X7Y12.CLK      Tas                   0.373   u_usb/usb_data<11>
+                                                       u_usb/Mmux_state[2]_GND_2_o_wide_mux_291_OUT161
+                                                       u_usb/usb_data_9
+    -------------------------------------------------  ---------------------------
+    Total                                     10.699ns (1.703ns logic, 8.996ns route)
+                                                       (15.9% logic, 84.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     10.262ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               u_usb/counter_1 (FF)
+  Destination:          u_usb/usb_data_9 (FF)
+  Requirement:          20.833ns
+  Data Path Delay:      10.535ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.001ns (0.453 - 0.454)
+  Source Clock:         USB_IFCLK_BUFGP rising at 0.000ns
+  Destination Clock:    USB_IFCLK_BUFGP rising at 20.833ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: u_usb/counter_1 to u_usb/usb_data_9
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X25Y20.AQ      Tcko                  0.430   u_usb/counter<0>
+                                                       u_usb/counter_1
+    SLICE_X14Y61.A3      net (fanout=1166)     4.521   u_usb/counter<1>
+    SLICE_X14Y61.BMUX    Topab                 0.456   u_usb/mux15_10_f85
+                                                       u_usb/mux15_1214
+                                                       u_usb/mux15_11_f7_8
+                                                       u_usb/mux15_10_f8_4
+    SLICE_X6Y45.D3       net (fanout=1)        1.882   u_usb/mux15_10_f85
+    SLICE_X6Y45.CMUX     Topdc                 0.456   u_usb/buff_9175
+                                                       u_usb/mux15_6
+                                                       u_usb/mux15_4_f7
+    SLICE_X7Y12.B5       net (fanout=1)        2.417   u_usb/mux15_4_f7
+    SLICE_X7Y12.CLK      Tas                   0.373   u_usb/usb_data<11>
+                                                       u_usb/Mmux_state[2]_GND_2_o_wide_mux_291_OUT161
+                                                       u_usb/usb_data_9
+    -------------------------------------------------  ---------------------------
+    Total                                     10.535ns (1.715ns logic, 8.820ns route)
+                                                       (16.3% logic, 83.7% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_CLOCK_USB = PERIOD TIMEGRP "USB_IFCLK" 48 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point u_usb/buff_0114 (SLICE_X4Y4.A6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.413ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               u_usb/buff_0114 (FF)
+  Destination:          u_usb/buff_0114 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.413ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         USB_IFCLK_BUFGP rising at 20.833ns
+  Destination Clock:    USB_IFCLK_BUFGP rising at 20.833ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: u_usb/buff_0114 to u_usb/buff_0114
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y4.AQ        Tcko                  0.200   u_usb/buff_0123
+                                                       u_usb/buff_0114
+    SLICE_X4Y4.A6        net (fanout=2)        0.023   u_usb/buff_0114
+    SLICE_X4Y4.CLK       Tah         (-Th)    -0.190   u_usb/buff_0123
+                                                       u_usb/buff_0114_dpot
+                                                       u_usb/buff_0114
+    -------------------------------------------------  ---------------------------
+    Total                                      0.413ns (0.390ns logic, 0.023ns route)
+                                                       (94.4% logic, 5.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point u_usb/buff_11202 (SLICE_X4Y41.A6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.413ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               u_usb/buff_11202 (FF)
+  Destination:          u_usb/buff_11202 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.413ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         USB_IFCLK_BUFGP rising at 20.833ns
+  Destination Clock:    USB_IFCLK_BUFGP rising at 20.833ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: u_usb/buff_11202 to u_usb/buff_11202
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y41.AQ       Tcko                  0.200   u_usb/buff_13150
+                                                       u_usb/buff_11202
+    SLICE_X4Y41.A6       net (fanout=2)        0.023   u_usb/buff_11202
+    SLICE_X4Y41.CLK      Tah         (-Th)    -0.190   u_usb/buff_13150
+                                                       u_usb/buff_11202_dpot
+                                                       u_usb/buff_11202
+    -------------------------------------------------  ---------------------------
+    Total                                      0.413ns (0.390ns logic, 0.023ns route)
+                                                       (94.4% logic, 5.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point u_usb/buff_330 (SLICE_X8Y11.A6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.413ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               u_usb/buff_330 (FF)
+  Destination:          u_usb/buff_330 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.413ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         USB_IFCLK_BUFGP rising at 20.833ns
+  Destination Clock:    USB_IFCLK_BUFGP rising at 20.833ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: u_usb/buff_330 to u_usb/buff_330
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X8Y11.AQ       Tcko                  0.200   u_usb/buff_1385
+                                                       u_usb/buff_330
+    SLICE_X8Y11.A6       net (fanout=2)        0.023   u_usb/buff_330
+    SLICE_X8Y11.CLK      Tah         (-Th)    -0.190   u_usb/buff_1385
+                                                       u_usb/buff_330_dpot
+                                                       u_usb/buff_330
+    -------------------------------------------------  ---------------------------
+    Total                                      0.413ns (0.390ns logic, 0.023ns route)
+                                                       (94.4% logic, 5.6% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_CLOCK_USB = PERIOD TIMEGRP "USB_IFCLK" 48 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 18.167ns (period - min period limit)
+  Period: 20.833ns
+  Min period limit: 2.666ns (375.094MHz) (Tbcper_I)
+  Physical resource: USB_IFCLK_BUFGP/BUFG/I0
+  Logical resource: USB_IFCLK_BUFGP/BUFG/I0
+  Location pin: BUFGMUX_X2Y9.I0
+  Clock network: USB_IFCLK_BUFGP/IBUFG
+--------------------------------------------------------------------------------
+Slack: 20.353ns (period - min period limit)
+  Period: 20.833ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: u_usb/buff_8106/CLK
+  Logical resource: u_usb/buff_8106/CK
+  Location pin: SLICE_X2Y2.CLK
+  Clock network: USB_IFCLK_BUFGP
+--------------------------------------------------------------------------------
+Slack: 20.353ns (period - min period limit)
+  Period: 20.833ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: u_usb/buff_158/CLK
+  Logical resource: u_usb/buff_148/CK
+  Location pin: SLICE_X2Y4.CLK
+  Clock network: USB_IFCLK_BUFGP
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
 
 
 Data Sheet report:
 -----------------
 All values displayed in nanoseconds (ns)
 
-Setup/Hold to clock USB_IFCLK
-------------+------------+------------+------------+------------+------------------+--------+
-            |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
-Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
-------------+------------+------------+------------+------------+------------------+--------+
-USB_DATA<0> |    1.470(R)|      SLOW  |   -0.233(R)|      SLOW  |USB_IFCLK_BUFGP   |   0.000|
-USB_DATA<1> |    1.748(R)|      SLOW  |   -0.425(R)|      SLOW  |USB_IFCLK_BUFGP   |   0.000|
-USB_DATA<2> |    1.603(R)|      SLOW  |   -0.357(R)|      SLOW  |USB_IFCLK_BUFGP   |   0.000|
-USB_DATA<3> |    1.804(R)|      SLOW  |   -0.470(R)|      SLOW  |USB_IFCLK_BUFGP   |   0.000|
-USB_DATA<4> |    1.005(R)|      SLOW  |    0.210(R)|      SLOW  |USB_IFCLK_BUFGP   |   0.000|
-USB_DATA<5> |    1.236(R)|      SLOW  |    0.067(R)|      SLOW  |USB_IFCLK_BUFGP   |   0.000|
-USB_DATA<6> |    0.830(R)|      SLOW  |    0.371(R)|      SLOW  |USB_IFCLK_BUFGP   |   0.000|
-USB_DATA<7> |    1.046(R)|      SLOW  |    0.244(R)|      SLOW  |USB_IFCLK_BUFGP   |   0.000|
-USB_DATA<8> |    0.995(R)|      SLOW  |    0.219(R)|      SLOW  |USB_IFCLK_BUFGP   |   0.000|
-USB_DATA<9> |    0.964(R)|      SLOW  |    0.324(R)|      SLOW  |USB_IFCLK_BUFGP   |   0.000|
-USB_DATA<10>|    0.671(R)|      SLOW  |    0.530(R)|      SLOW  |USB_IFCLK_BUFGP   |   0.000|
-USB_DATA<11>|    0.887(R)|      SLOW  |    0.403(R)|      SLOW  |USB_IFCLK_BUFGP   |   0.000|
-USB_DATA<12>|    0.794(R)|      SLOW  |    0.417(R)|      SLOW  |USB_IFCLK_BUFGP   |   0.000|
-USB_DATA<13>|    1.019(R)|      SLOW  |    0.281(R)|      SLOW  |USB_IFCLK_BUFGP   |   0.000|
-USB_DATA<14>|    0.875(R)|      SLOW  |    0.337(R)|      SLOW  |USB_IFCLK_BUFGP   |   0.000|
-USB_DATA<15>|    1.101(R)|      SLOW  |    0.199(R)|      SLOW  |USB_IFCLK_BUFGP   |   0.000|
-USB_FLAGA   |    2.633(R)|      SLOW  |   -0.512(R)|      SLOW  |USB_IFCLK_BUFGP   |   0.000|
-USB_FLAGD   |    3.744(R)|      SLOW  |   -0.813(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
-------------+------------+------------+------------+------------+------------------+--------+
-
-Clock USB_IFCLK to Pad
-------------+-----------------+------------+-----------------+------------+------------------+--------+
-            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
-Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
-------------+-----------------+------------+-----------------+------------+------------------+--------+
-USB_ADDR<1> |         8.708(R)|      SLOW  |         3.552(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
-USB_DATA<0> |        10.582(R)|      SLOW  |         4.247(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
-USB_DATA<1> |        10.622(R)|      SLOW  |         4.251(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
-USB_DATA<2> |        11.445(R)|      SLOW  |         4.410(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
-USB_DATA<3> |        10.632(R)|      SLOW  |         4.297(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
-USB_DATA<4> |        10.472(R)|      SLOW  |         3.945(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
-USB_DATA<5> |        10.266(R)|      SLOW  |         3.945(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
-USB_DATA<6> |         9.980(R)|      SLOW  |         3.760(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
-USB_DATA<7> |         9.980(R)|      SLOW  |         3.760(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
-USB_DATA<8> |        10.049(R)|      SLOW  |         3.692(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
-USB_DATA<9> |        10.235(R)|      SLOW  |         3.999(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
-USB_DATA<10>|        10.056(R)|      SLOW  |         3.898(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
-USB_DATA<11>|        10.053(R)|      SLOW  |         3.842(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
-USB_DATA<12>|        10.076(R)|      SLOW  |         3.923(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
-USB_DATA<13>|        10.239(R)|      SLOW  |         3.990(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
-USB_DATA<14>|        10.025(R)|      SLOW  |         3.852(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
-USB_DATA<15>|        10.391(R)|      SLOW  |         3.876(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
-USB_PKEND   |         8.651(R)|      SLOW  |         3.497(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
-USB_SLOE    |         9.268(R)|      SLOW  |         3.924(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
-USB_SLRD    |         8.561(R)|      SLOW  |         3.435(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
-USB_SLWR    |         8.752(R)|      SLOW  |         3.602(R)|      FAST  |USB_IFCLK_BUFGP   |   0.000|
-------------+-----------------+------------+-----------------+------------+------------------+--------+
-
 Clock to Setup on destination clock USB_IFCLK
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-USB_IFCLK      |    3.794|         |         |         |
+USB_IFCLK      |   11.113|         |         |         |
 ---------------+---------+---------+---------+---------+
 
-Pad to Pad
----------------+---------------+---------+
-Source Pad     |Destination Pad|  Delay  |
----------------+---------------+---------+
-USB_FLAGA      |LED<0>         |    7.482|
-USB_FLAGB      |LED<1>         |    7.221|
-USB_FLAGC      |LED<2>         |    7.221|
-USB_FLAGD      |LED<3>         |    7.178|
----------------+---------------+---------+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 66720 paths, 0 nets, and 17455 connections
+
+Design statistics:
+   Minimum period:  11.113ns{1}   (Maximum frequency:  89.985MHz)
 
 
-Analysis completed Thu Nov 28 19:04:53 2019 
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Sun Dec 01 19:32:38 2019 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 4576 MB
+Peak Memory Usage: 4654 MB
 
 
 

@@ -40,6 +40,7 @@ localparam SELECT_READ_FIFO = 3'b001;
 localparam READ_FROM_USB = 3'b010;
 localparam SELECT_WRITE_FIFO = 3'b011;
 localparam WRITE_TO_USB = 3'b100;
+localparam JUANJI = 3'b101;
 
 reg [2 : 0]              state = 0;
 reg [2 : 0]              state_nxt = 0;
@@ -77,7 +78,7 @@ always @(*) begin
 		 end
 		 READ_FROM_USB: begin
 		    if((counter == `MAXPKG - 1) || (i_usb_flaga == 1'b0))begin
-			     state_nxt = SELECT_WRITE_FIFO;
+			     state_nxt = JUANJI;
           end
           else begin
 			     state_nxt = READ_FROM_USB;
@@ -98,6 +99,9 @@ always @(*) begin
 			 else begin
 			     state_nxt = WRITE_TO_USB;
 			 end
+		 end
+		 JUANJI: begin
+		     state_nxt = SELECT_WRITE_FIFO; // 这里可能有问题，是不是应该计算完成再转成IDLE状态，要考虑一下
 		 end
 		 default: begin
 		     state_nxt = IDLE;
@@ -179,6 +183,11 @@ always @(posedge i_usb_ifclk) begin
 			 usb_addr <= 2'b10;
 			 counter <= counter + 1'b1;
 			 usb_data <= buff[counter];
+		 end
+		 JUANJI: begin
+		 // 写死，一定是2x3矩阵，然后卷积核是2x2的，全是1
+		 buff[8'd16] <= buff[4'd0] + buff[4'd1] + buff[4'd3] + buff[4'd4];
+		 buff[8'd17] <= buff[4'd1] + buff[4'd2] + buff[4'd4] + buff[4'd5];
 		 end
 		 default: begin
 		    usb_slrd <= 1'b1;
