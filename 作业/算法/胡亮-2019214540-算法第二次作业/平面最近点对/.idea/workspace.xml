@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e3d755c2-7c79-4f69-8bb5-72cd4a3f7ac4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../胡亮-2019214540-算法第10次作业/rsc/100.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../胡亮-2019214540-算法第10次作业/rsc/1000.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../胡亮-2019214540-算法第10次作业/rsc/10000.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../胡亮-2019214540-算法第10次作业/rsc/100000.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../胡亮-2019214540-算法第10次作业/rsc/1000000.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../胡亮-2019214540-算法第10次作业/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../胡亮-2019214540-算法第10次作业/src/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../胡亮-2019214540-算法第10次作业/src/matcher/BFMatcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../胡亮-2019214540-算法第10次作业/src/matcher/BMMatcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../胡亮-2019214540-算法第10次作业/src/matcher/KMPMatcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../胡亮-2019214540-算法第10次作业/src/matcher/Matcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../胡亮-2019214540-算法第10次作业/src/tools/Tool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../胡亮-2019214540-算法第10次作业/src/tools/TxtReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../胡亮-2019214540-算法第10次作业/src/ui/MyUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../胡亮-2019214540-算法第10次作业/src/ui/SearchListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../胡亮-2019214540-算法第10次作业/src/ui/TxtListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../今日学习.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../笔记/最优化.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../笔记/最优化.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../笔记/算法.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../笔记/算法.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../课件和书/硕士生英语/2019-2020研究生综合学术英语教程-定 (1).docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../课件和书/硕士生英语/2019-2020研究生综合学术英语教程-定 (1).docx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="1V6bF2pxU2hbM8TNd4SHUTTSLOx" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e3d755c2-7c79-4f69-8bb5-72cd4a3f7ac4" name="Default Changelist" comment="" />
+      <created>1576576384537</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1576576384537</updated>
+    </task>
+    <servers />
+  </component>
+</project>

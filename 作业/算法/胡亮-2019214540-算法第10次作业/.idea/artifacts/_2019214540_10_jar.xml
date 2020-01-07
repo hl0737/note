@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="胡亮-2019214540-算法第10次作业:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/_2019214540_10_jar</output-path>
+    <root id="archive" name="胡亮-2019214540-算法第10次作业.jar">
+      <element id="module-output" name="胡亮-2019214540-算法第10次作业" />
+    </root>
+  </artifact>
+</component>
